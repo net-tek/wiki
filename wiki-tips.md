@@ -70,3 +70,7 @@ Simply add the desired styling class below your blockquote:
 {.is-danger}
 ```
 
+
+# Keyboard shortcuts
+## General shortcuts
+* **CTRL+S:** Save and view processed page.
