@@ -74,3 +74,9 @@ Simply add the desired styling class below your blockquote:
 # Keyboard shortcuts
 ## General shortcuts
 * **CTRL+S:** Save and view processed page.
+
+## Formatting shortcuts
+* **CTRL+B:** Set selected text as bold.
+* **CTRL+I:** Set selected text as italic.
+* **CTRL+L:** Start a bullet list.
+* **CTRL+ALT+L:** Start a numbered list.
