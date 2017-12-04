@@ -21,3 +21,15 @@ For example, the following markdown text:
 
 > You can even include **styling** in your text, or **icons** :apple:
 ```
+
+would result in:
+
+> A line of text
+
+> A blockquote with
+> 
+> multiple lines  
+> of text!
+
+> You can even include **styling** in your text, or **icons** :apple:
+
