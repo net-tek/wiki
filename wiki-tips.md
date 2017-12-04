@@ -33,3 +33,7 @@ would result in:
 
 > You can even include **styling** in your text, or **icons** :apple:
 
+## Available styling
+
+Various styling options are available:
+
