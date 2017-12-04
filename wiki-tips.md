@@ -9,3 +9,15 @@ A blockquote is originally used to define a section that is quoted from another 
 Simply begin your line of text with a **>**
 
 For example, the following markdown text:
+
+
+```text
+> A line of text
+
+> A blockquote with
+> 
+> multiple lines  
+> of text!
+
+> You can even include **styling** in your text, or **icons** :apple:
+```
