@@ -121,3 +121,12 @@ Make sure Dropbox is running:
 `$ /etc/init.d/dropbox status`
 
 And you're good to go . Dropbox will now run as a background service when you start your server.
+
+## Backing up to Dropbox
+After installing Dropbox, you can use the backup script from my previous post and backup to the Dropbox instead. Like this:
+
+`$ /var/scripts/backup.sh -d ~/Dropbox/backup/lassebunk/daily -s lassebunk -m lassebunk`
+
+Or, you can manually backup files by copying them to the Dropbox folder:
+
+`$ cp myveryimportantfile.tar.gz ~/Dropbox`
