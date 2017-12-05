@@ -147,4 +147,25 @@ Unordered lists can be defined using a dash at the beginning of every line:
 - Item 3
 ```
 
+Ordered lists can be defined using numbers:
+
+
+```markdown
+1. Item
+2. Item
+3. Item
+```
+
+Note that ordered lists are automatically incremented. You can therefore use 1. for all items.
+
+# Links
+Links to other page or external webpages are defined using the following syntax:
+
+
+```markdown
+[Internal Link Title](/path/to/page)
+[External Link Title](https://www.google.com/)
+```
+
+
 
