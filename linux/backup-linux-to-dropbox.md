@@ -32,3 +32,17 @@ Or stable 64-bit:
 Extract:
 
 `$ tar -xvzf dropbox.tar.gz`
+
+
+Run Dropbox:
+
+`$ ~/.dropbox-dist/dropbox`
+
+You should see output like this:
+
+`This client is not linked to any account...
+Please visit https://www.dropbox.com/cli_link?host_id=7d44a557aa58f285f2da0x67334d02c1 to link this machine.`
+
+Go to the URL given; you should see a success message at the top of your screen.
+Important: Dropbox will create a ~/Dropbox folder and start synchronizing when you do this. Make sure you&#8217;ve logged in to the correct Dropbox account at www.dropbox.com before going to the URL.
+Exit Dropbox by pressing < code >.
