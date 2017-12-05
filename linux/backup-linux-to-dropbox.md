@@ -130,3 +130,6 @@ After installing Dropbox, you can use the backup script from my previous post an
 Or, you can manually backup files by copying them to the Dropbox folder:
 
 `$ cp myveryimportantfile.tar.gz ~/Dropbox`
+
+## Conclusion
+I hope you found this post helpful when creating your own remote backup solution. If you did, please let me know in the comments how you use it .
