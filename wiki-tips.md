@@ -205,13 +205,13 @@ To add syntax highlighting, simply add the language name right after the opening
 
 
 ```text
-```js
+"```js
 var sample = 'code';
 
 on.multiple(lines) {
     cool();
 }
-```
+```"
 ```
 
 
