@@ -119,3 +119,32 @@ To define a line as a header, simply put a hash sign # at the beginning. The amo
 ###### H6
 ```
 
+Example:
+
+
+```text
+# Section A
+
+## Sub-section A.1
+
+### Sub-sub-section A.1.1
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at sapien at odio fringilla lobortis.
+
+# Section B
+
+Etc...
+```
+
+In the above example, Section A and B are top level headers and Section A has a sub-header (A.1), which contains a sub-header (A.1.1).
+
+# Lists
+Unordered lists can be defined using a dash at the beginning of every line:
+
+```markdown
+- Item 1
+- Item 2
+- Item 3
+```
+
+
