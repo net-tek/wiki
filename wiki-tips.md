@@ -101,8 +101,8 @@ Headers are useful to break a long page into sections. For example, the page you
 
 * What is Markdown
 * Basics
- - Bold
- - Italic
- - Strikethrough
+	- Bold
+	- Italic
+	- Strikethrough
 * Headers
 * etc...
