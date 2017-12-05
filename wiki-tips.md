@@ -191,28 +191,28 @@ Inline code provide a quick way to insert `code / commands` without creating a s
 If your code requires multiple lines or you need syntax highlighting, it is preferrable to use code blocks. They are enclosed by triple backticks:
 
 
-```markdown
-\```
+````markdown
+```
 var sample = 'code';
 
 on.multiple(lines) {
     cool();
 }
-\```
 ```
+````
 
 To add syntax highlighting, simply add the language name right after the opening triple backticks:
 
 
-```text
-\```js
+````text
+```js
 var sample = 'code';
 
 on.multiple(lines) {
     cool();
 }
-\```
 ```
+````
 
 
 
