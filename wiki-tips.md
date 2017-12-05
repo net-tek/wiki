@@ -243,6 +243,24 @@ you don't have to pick an identifier and move down to type the
 note.]
 ```
 
+# Line breaks
+Markdown does not handle line breaks the same way most editors do. There're a few differences to be aware of:
+
+**A single line break will not produce a line break once displayed.**
+
+For example, the following content:
+
+
+```markdown
+First line here
+Second line here
+```
+
+will be displayed as:
+
+First line hereSecond line here
+
+
 
 
 
