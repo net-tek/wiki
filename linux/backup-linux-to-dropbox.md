@@ -46,3 +46,59 @@ You should see output like this:
 Go to the URL given; you should see a success message at the top of your screen.
 **Important:** Dropbox will create a ~/Dropbox folder and start synchronizing when you do this. Make sure you've logged in to the correct Dropbox account at www.dropbox.com before going to the URL.
 Exit Dropbox by pressing CTRL+C.
+
+## Installing Dropbox as a service
+The following is a modified single-user version of Drazenko D.’s Dropbox daemon script.
+Start up your favorite editor, creating < code >:
+
+`$ nano /etc/init.d/dropbox`
+
+Insert the following script:
+
+
+```sh
+start() {
+    echo "Starting dropbox..."
+    start-stop-daemon -b -o -c root -S -x /root/.dropbox-dist/dropbox
+}
+
+stop() {
+    echo "Stopping dropbox..."
+    start-stop-daemon -o -c root -K -x /root/.dropbox-dist/dropbox
+}
+
+status() {
+        dbpid=$(pgrep -u root dropbox)
+        if [ -z $dbpid ] ; then
+            echo "dropbox not running."
+        else
+            echo "dropbox running."
+        fi
+}
+
+case "" in
+  start)
+    start
+    ;;
+
+  stop)
+    stop
+    ;;
+
+  restart|reload|force-reload)
+    stop
+    start
+    ;;
+
+  status)
+    status
+    ;;
+
+  *)
+    echo "Usage: /etc/init.d/dropbox {start|stop|reload|force-reload|restart|status}"
+    exit 1
+
+esac
+
+exit 0
+```
