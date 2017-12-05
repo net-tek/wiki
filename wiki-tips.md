@@ -106,3 +106,16 @@ Headers are useful to break a long page into sections. For example, the page you
 	- Strikethrough
 * Headers
 * etc...
+
+To define a line as a header, simply put a hash sign # at the beginning. The amount of consecutive # you insert defines the level of the header.
+
+
+```text
+# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6
+```
+
