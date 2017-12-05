@@ -9,3 +9,26 @@ In this post I am going to show how to extend this setup with Dropbox to make it
 ## Obtaining an account from Dropbox
 You might want to create a Dropbox account only for taking backups if you don&#8217;t want all your documents and photos synchronized to your Linux server.
 Go to www.dropbox.com to create your account.
+
+## Dropbox installation
+The installation instructions below are a slightly modified version from the Dropbox community’s to make it as easy as possible.
+Start by logging in to your Linux server as the user you want to assign Dropbox to. In this example we will use root:
+
+`$ sudo su`
+
+Change to your home directory:
+
+`$ cd ~`
+
+Download Dropbox.
+Stable 32-bit:
+
+`$ wget -O dropbox.tar.gz "http://www.dropbox.com/download/?plat=lnx.x86"`
+
+Or stable 64-bit:
+
+`$ wget -O dropbox.tar.gz "http://www.dropbox.com/download/?plat=lnx.x86_64"`
+
+Extract:
+
+`$ tar -xvzf dropbox.tar.gz`
