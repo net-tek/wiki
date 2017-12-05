@@ -219,6 +219,22 @@ on.multiple(lines) {
 Simply put **three (3)** of the following characters to create an horizontal rule: `***` (asterisks) or `---` (hyphens)
 Which results in:
 
+# Footnotes
+You can easily add footnote references using the `[^x]` syntax (where `x` is a number or name):
+
+
+```markdown
+Here is a footnote reference,[^1] and another.[^longnote]
+
+[^1]: Here is the footnote.
+
+[^longnote]: Here's one with multiple blocks.
+
+    Subsequent paragraphs are indented to show that they
+belong to the previous footnote.
+```
+
+
 
 
 
