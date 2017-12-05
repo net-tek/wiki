@@ -102,3 +102,22 @@ esac
 
 exit 0
 ```
+
+And save and exit the editor.
+Set up execute permissions for the script:
+
+`$ chmod +x /etc/init.d/dropbox`
+
+Set the script to load at startup:
+
+`$ update-rc.d dropbox defaults`
+
+Run the script to start Dropbox:
+
+`$ /etc/init.d/dropbox start`
+
+Make sure Dropbox is running:
+
+`$ /etc/init.d/dropbox status`
+
+And you're good to go . Dropbox will now run as a background service when you start your server.
