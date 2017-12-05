@@ -192,13 +192,13 @@ If your code requires multiple lines or you need syntax highlighting, it is pref
 
 
 ```markdown
-```
+"```
 var sample = 'code';
 
 on.multiple(lines) {
     cool();
 }
-```
+```"
 ```
 
 
