@@ -89,3 +89,9 @@ Markdown is a lightweight markup language with plain text formatting syntax desi
 ## Bold
 To make a text in bold, simply put double asterisks `**` before and after the desired text:
 
+`To **boldly** go` -> To **boldly** go
+
+## Strikethrough
+To make a text in italic, simply put double tildes ~~ before and after the desired text:
+
+`Something ~~not cool~~` -> Something ~~not cool~~
