@@ -192,26 +192,26 @@ If your code requires multiple lines or you need syntax highlighting, it is pref
 
 
 ```markdown
-````
+``````
 var sample = 'code';
 
 on.multiple(lines) {
     cool();
 }
-````
+``````
 ```
 
 To add syntax highlighting, simply add the language name right after the opening triple backticks:
 
 
 ```text
-````js
+``````js
 var sample = 'code';
 
 on.multiple(lines) {
     cool();
 }
-````
+``````
 ```
 
 
