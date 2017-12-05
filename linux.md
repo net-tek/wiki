@@ -1,4 +1,2 @@
 <!-- TITLE: Linux -->
-<!-- SUBTITLE: A quick summary of Linux -->
-
-# Header
+<!-- SUBTITLE: Pages related to the installation/configuration/troubleshooting of Linux products -->
