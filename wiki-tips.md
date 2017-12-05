@@ -167,5 +167,19 @@ Links to other page or external webpages are defined using the following syntax:
 [External Link Title](https://www.google.com/)
 ```
 
+A special icon is automatically displayed next to external links to denote the user will leave the site if clicked.
+
+# Images
+Images can be inserted in almost the same way as links. They simply require an extra ! at the beginning:
+
+
+```markdown
+![Image Caption](http://link.to/image.jpg)
+```
+
+# Code
+## Inline
+
+
 
 
