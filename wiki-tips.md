@@ -267,7 +267,11 @@ This will indicate to Markdown that the next line should be a new line.
 
 To create a new paragrah, simply press **Enter** twice.
 
+# Icons (emojis)
+An extensive list of emojis can be easily inserted into your content. Simply type the emoji code corresponding to the icon you want to use. E.g:
 
+`:apple:`  :apple:
+`:date: ` :date:
 
 
 
