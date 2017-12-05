@@ -201,6 +201,20 @@ on.multiple(lines) {
 ```"
 ```
 
+To add syntax highlighting, simply add the language name right after the opening triple backticks:
+
+
+```text
+```js
+var sample = 'code';
+
+on.multiple(lines) {
+    cool();
+}
+```
+```
+
+
 
 
 
