@@ -179,6 +179,27 @@ Images can be inserted in almost the same way as links. They simply require an e
 
 # Code
 ## Inline
+Inline code provide a quick way to insert `code / commands` without creating a standalone code block. They are enclosed by a single back-tick:
+
+
+```markdown
+`This is an inline code`
+```
+
+## Block
+
+If your code requires multiple lines or you need syntax highlighting, it is preferrable to use code blocks. They are enclosed by triple backticks:
+
+
+```markdown
+```
+var sample = 'code';
+
+on.multiple(lines) {
+    cool();
+}
+```
+```
 
 
 
