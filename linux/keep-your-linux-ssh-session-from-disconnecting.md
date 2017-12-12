@@ -3,7 +3,7 @@
 Add the following line to the `/etc/ssh/ssh_config` file:
 
 ```sh
-  ServerAliveInterval 30
+ServerAliveInterval 30
 ```
 
 The number is the amount of seconds before the server with send the no-op code.
