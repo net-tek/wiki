@@ -10,3 +10,7 @@ These are some reasons for this entry to be recorded in your ErrorLog:
 * You need a block for every folder outside of your DocumentRoot, i.e. your cgi-bin folder. 
 * You need a or block for every Alias. 
 * You need a or block for your proxy 
+
+
+To fix this problem, look at the line in your ErrorLog, to find out which folder it is trying to access. 
+If a block already exists for that folder, make sure it is set to allow access as necessary. If not, add a block to your Apache configuration file, allowing access as required. See the example below for folder /usr/local/awstats/htdocs. 
