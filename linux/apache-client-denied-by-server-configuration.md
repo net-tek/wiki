@@ -5,8 +5,8 @@ This error means that the access to the directory on the hard disk was denied by
 
 These are some reasons for this entry to be recorded in your ErrorLog: 
 
-*The default Apache config includes Deny from all in the block the DocumentRoot - this must be changed to allow access! 
-*If you change the DocumentRoot, you will need to change the block referring the old root, to the refer to the new root 
-*You need a block for every folder outside of your DocumentRoot, i.e. your cgi-bin folder. 
-*You need a or block for every Alias. 
-*You need a or block for your proxy 
+* The default Apache config includes Deny from all in the block the DocumentRoot - this must be changed to allow access! 
+* If you change the DocumentRoot, you will need to change the block referring the old root, to the refer to the new root 
+* You need a block for every folder outside of your DocumentRoot, i.e. your cgi-bin folder. 
+* You need a or block for every Alias. 
+* You need a or block for your proxy 
