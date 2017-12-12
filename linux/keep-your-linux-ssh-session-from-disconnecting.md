@@ -16,3 +16,17 @@ Add the following lines to the `~/.ssh/config` file (create if it doesn’t exis
 Host *
   ServerAliveInterval 30
 ```
+
+Make sure you indent the second line with a space.
+
+# Per-Host Configuration
+If you only want to enable keep alive for a single server, you can add that into the `~/.ssh/config` file with the following syntax:
+
+
+```sh
+Host *hostname.com
+   ServerAliveInterval 60
+```
+
+Works quite well, hope it helps somebody else out there.
+
