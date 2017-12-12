@@ -16,3 +16,6 @@ Marking the volume group inactive removes it from the kernel and prevents any fu
 vgchange -an design
 vgchange -- volume group "design" successfully deactivated
 ```
+
+# Export the volume group
+It is now necessary to export the volume group. This prevents it from being accessed on the ***old*** host system and prepares it to be removed.
