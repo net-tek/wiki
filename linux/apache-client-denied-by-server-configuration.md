@@ -44,4 +44,6 @@ Example
 [Fri Jan 16 15:00:42 2009] [error] [client ::1] client denied by server configuration: /var/www/phpmyadmin/
 ```
 
+**Adding "Allow from 127.0.0.0/255.0.0.0 ::1/128" to the ACL, will prevent the apache internal process from erroring.**
+
 
