@@ -22,3 +22,26 @@ If a block already exists for that folder, make sure it is set to allow access a
     Allow from all
 </Directory>
 ```
+
+This directory block will allow Apache to serve files from this location, in response to an incoming request. This assumes either you have an Alias set up somewhere for serving content from this directory or, less likely, that your DocumentRoot is /usr/local or /usr/local/awstats. 
+
+
+```apache_conf
+ProxyPass /foo http://internal.foo.com:8900/
+ProxyPassReverse /foo http://internal.foo.com:8900/
+<Location /foo>
+    Order allow,deny
+    Allow from all
+</Location>
+```
+
+This Location block will allow Apache to proxy content for /foo. This Location block is only needed if there is earlier Proxy or Location block denying access to this resource. Some Linux distributions like Debian put Proxy block with "Deny from all" in their default mod_proxy configuration. 
+
+Example
+
+
+```text
+[Fri Jan 16 15:00:42 2009] [error] [client ::1] client denied by server configuration: /var/www/phpmyadmin/
+```
+
+
