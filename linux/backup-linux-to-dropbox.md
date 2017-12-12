@@ -33,6 +33,8 @@ Extract:
 
 `$ tar -xvzf dropbox.tar.gz`
 
+It will extract to `.dropbox-dist`
+
 
 Run Dropbox:
 
@@ -45,11 +47,11 @@ You should see output like this:
 
 Go to the URL given; you should see a success message at the top of your screen.
 **Important:** Dropbox will create a ~/Dropbox folder and start synchronizing when you do this. Make sure you've logged in to the correct Dropbox account at www.dropbox.com before going to the URL.
-Exit Dropbox by pressing CTRL+C.
+Exit Dropbox by pressing `CTRL+D`
 
 ## Installing Dropbox as a service
 The following is a modified single-user version of Drazenko D.’s Dropbox daemon script.
-Start up your favorite editor, creating < code >:
+Start up your favorite editor, creating `/etc/init.d/dropbox` :
 
 `$ nano /etc/init.d/dropbox`
 
