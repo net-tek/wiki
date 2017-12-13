@@ -36,17 +36,20 @@ You now know:
 ## USB cards
 
 One will want to execute at a terminal:
-usb-devices 
-Drivers available in Ubuntu
+
+`usb-devices`
+
+# Drivers available in Ubuntu
 The following is an overview of the different drivers that are available for Broadcom wireless devices.
 
-Broadcom STA Wireless driver (Proprietary)
+## Broadcom STA Wireless driver (Proprietary)
 
 For Chip ID BCM 4311, 4312, 4313, 4321, 4322, 4331, 4352, 4360, 43142, 43224, 43225, 43227, 43228, and others as suggested by Broadcom. 
 
 The propietary Broadcom STA Wireless driver is maintained upstream by Broadcom. As this driver is closed source, fixes in the driver itself may only be provided by Broadcom. As a convenience, Ubuntu offers two versions of this driver:
-The bcmwl-kernel-source package aims to offer a later version for a given release. Instructions for installation may be found later in this article.
-The broadcom-sta package aims to offer an earlier version for a given release. For further installation instructions, please see here.
+
+* The bcmwl-kernel-source package aims to offer a later version for a given release. Instructions for installation may be found later in this article.
+* The broadcom-sta package aims to offer an earlier version for a given release. For further installation instructions, please see here.
 
 b43 driver (Open-source)
 
