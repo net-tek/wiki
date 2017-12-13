@@ -11,10 +11,11 @@ With this information, you may assess what drivers are supported for your card, 
 
 To identify a card that was installed inside your computer prior to purchase, please open a Terminal and execute:
 
-`lspci -vvnn | grep -A 9 Network` 
+```sh
+lspci -vvnn | grep -A 9 Network
+```
 
 This will display:
-
 
 ```sh
 03:00.0 Network controller [0280]: Broadcom Corporation BCM4331 802.11a/b/g/n [14e4:4331] (rev 02)
@@ -34,10 +35,11 @@ You now know:
 * Kernel driver in use: wl
 
 ## USB cards
-
 One will want to execute at a terminal:
 
-`usb-devices`
+```sh
+usb-devices
+```
 
 # Drivers available in Ubuntu
 The following is an overview of the different drivers that are available for Broadcom wireless devices.
@@ -97,17 +99,14 @@ If you have some other kind of Internet access on your computer (e.g. via an eth
 
 Open a Terminal and install the bcmwl-kernel-source package:
 
-
 ```sh
 sudo apt-get update
 sudo apt-get --reinstall install bcmwl-kernel-source
 ```
 
-
 **Note: **If you see the message "Module build for the currently running kernel was skipped since the kernel source for this kernel does not seem to be installed" then you are missing the appropriate generic linux-header package(s).
 
 To test the driver (and remove the need for a computer restart) use:
-
 
 ```sh
 sudo modprobe -r b43 ssb wl brcmfmac brcmsmac bcma
@@ -123,18 +122,21 @@ If you do not have any other means of Internet access on your computer, you can 
 
 **Note:** The bcmwl-kernel-source package depends on the linux-headers packages so you may need to first retrieve the appropriate package(s) from the online repositories. A running LiveCD/LiveUSB environment has these packages (allowing the wireless to work), but an installed system may not. Make sure you have the linux-headers package that matches your current kernel version, plus the appropriate generic header packages so that they are automatically updated on a kernel upgrade. To find out your current kernel use the command:
 
-`uname -r`
+```sh
+uname -r
+```
 
 To find what linux-headers packages you have installed use the command:
 
-`dpkg --get-selections | grep headers`
+```sh
+dpkg --get-selections | grep headers
+```
 
 Systems installed from CDROM can add the install CD as a package source and install bcmwl-kernel-source using apt-get **as above**. However, if you want to do it manually then the instructions are as follows:
 
 Navigate the install media and install the packages listed below by double clicking **OR** install the packages consecutively from a Terminal (in the commands below the install media is mounted at /cdrom, but yours maybe different): 
 
 * ../pool/main/d/dkms
-
 
 ```sh
 cd /cdrom/pool/main/d/dkms
@@ -150,14 +152,12 @@ sudo dpkg -i patch*
 
 * ../pool/main/f/fakeroot
 
-
 ```sh
 cd /cdrom/pool/main/f/fakeroot
 sudo dpkg -i fakeroot*
 ```
 
 * ../pool/restricted/b/bcmwl
-
 
 ```sh
 cd /cdrom/pool/restricted/b/bcmwl
@@ -176,19 +176,27 @@ The Ubuntu kernel now provides the b43 driver, however due to copyright restrict
 ### 12.04 (Precise Pangolin) - 14.04 (Trusty Tahr)
 Open a Terminal and if you haven't already done so, update your package list:
 
-`sudo apt-get update`
+```sh
+sudo apt-get update
+```
 
 If you have a **b43** card use the command
 
-`sudo apt-get install firmware-b43-installer`
+```sh
+sudo apt-get install firmware-b43-installer
+```
 
 or, if you need the **b43legacy** driver, use:
 
-`sudo apt-get install firmware-b43legacy-installer`
+```sh
+sudo apt-get install firmware-b43legacy-installer
+```
 
 or, (12.04) if you need a **LP-PHY** version (e.g BCM4312), use:
 
-`sudo apt-get install firmware-b43-lpphy-installer`
+```sh
+sudo apt-get install firmware-b43-lpphy-installer
+```
 
 Restart the computer or reload the b43/b43legacy module as outlined in the Switching between drivers section below (replace b43 with b43legacy where appropriate).
 
@@ -217,32 +225,25 @@ http://wireless.kernel.org/en/users/Drivers/b43/developers .
 
 **b43legacy**
 
-
 ```sh
 sudo b43-fwcutter -w /lib/firmware wl_apsta-3.130.20.0.o
 ```
 
-
 **b43 (12.04 Precise Pangolin)**
-
 
 ```sh
 tar xfvj broadcom-wl-5.10.56.27.3_mipsel.tar.bz2
 sudo b43-fwcutter -w /lib/firmware broadcom-wl-5.10.56.27.3/driver/wl_apsta/wl_prebuilt.o
 ```
 
-
 **b43 (14.04 Trusty Tahr)**
-
 
 ```sh
 tar xfvj broadcom-wl-5.100.138.tar.bz2
 sudo b43-fwcutter -w /lib/firmware broadcom-wl-5.100.138/linux/wl_apsta.o
 ```
 
-
 * Restart the computer or reload the b43/b43legacy module as outlined in the Switching between drivers section below (replace b43 with b43legacy where appropriate).
-
 
 Switching between drivers
 If you card is supported by more than one driver then use the modprobe command to test the drivers. First unload all conflicting drivers (this includes removing the driver you're trying to install):
