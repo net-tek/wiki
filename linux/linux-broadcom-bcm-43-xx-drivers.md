@@ -245,59 +245,94 @@ sudo b43-fwcutter -w /lib/firmware broadcom-wl-5.100.138/linux/wl_apsta.o
 
 * Restart the computer or reload the b43/b43legacy module as outlined in the Switching between drivers section below (replace b43 with b43legacy where appropriate).
 
-Switching between drivers
+# Switching between drivers
 If you card is supported by more than one driver then use the modprobe command to test the drivers. First unload all conflicting drivers (this includes removing the driver you're trying to install):
 
+```sh
 sudo modprobe -r b43 bcma
 sudo modprobe -r brcmsmac bcma
 sudo modprobe -r wl
-To load a specific driver use one of the following commands:
+```
+
+To load a specific driver use **one** of the following commands:
+
+```sh
 sudo modprobe b43
 sudo modprobe brcmsmac
 sudo modprobe wl
+```
+
 Allow several seconds for the network manager to scan for available networks before attempting a connection.
+
 After a reboot the system may auto-load a different driver to the one you wanted to use. Consequently, for permanent use, you may find it necessary to blacklist the driver/module you are not using. In the command below replace drivername with the driver you want to blacklist:
+
+```sh
 echo "blacklist drivername" | sudo tee -a /etc/modprobe.d/blacklist-broadcom-wireless.conf
+```
+
 Update the initramfs after any changes to the blacklist files:
+
+```sh
 sudo update-initramfs -u
-Note: The bcmwl-kernel-source package will automatically blacklist the open source drivers/modules in /etc/modprobe.d/blacklist-bcm43.conf.
+```
+
+**Note:** The bcmwl-kernel-source package will automatically blacklist the open source drivers/modules in **/etc/modprobe.d/blacklist-bcm43.conf.**
+
 If you wish to permanently use the open source drivers then remove the bcmwl-kernel-source package:
+
+```sh
 sudo apt-get purge bcmwl-kernel-source
-Ensure that the driver/modules you wish to use are not blacklisted in any of the other files in /etc/modprobe.d .
-Back to top
+```
 
-Unsupported devices
+Ensure that the driver/modules you wish to use are not blacklisted in any of the other files in **/etc/modprobe.d.**
+
+# Unsupported devices
 If your wifi card/chipset and/or various modes are not supported by the STA driver or the open source kernel drivers, then you will need to go for ndiswrapper - this will allow you to use the Windows closed source drivers to activate your wifi card.
-Back to top
 
-Known Issues
-LP#1010931 14e4:4727 [Dell Vostro 3555] Broadcom BCM4313 5GHz doesn't work but 2.4GHz does
-The root cause is the card only transmits/receives on the single-band 2.4GHz only, so it would never broadcast at 5GHz.
-Back to top
+# Known Issues
+* LP#1010931 14e4:4727 [Dell Vostro 3555] Broadcom BCM4313 5GHz doesn't work but 2.4GHz does
+* The root cause is the card only transmits/receives on the single-band 2.4GHz only, so it would never broadcast at 5GHz.
 
-Filing bug reports
-Broadcom STA Wireless driver
+# Filing bug reports
+## Broadcom STA Wireless driver
 
 Before filing a bug report against either the bcmwl-kernel-source or broadcom-sta-source package, one from the Ubuntu repositories is installed (not a recompiled/custom version) and then execute one of the following via a terminal:
+
+```sh
 ubuntu-bug bcmwl-kernel-source
 ubuntu-bug broadcom-sta-source 
+```
+
 If this doesn't work, or doesn't include all of the following information, please ensure all of the below is provided:
-Please include only one (not both) of the following corresponding to which driver series you are filing a report against:
+
+* Please include only one (not both) of the following corresponding to which driver series you are filing a report against:
+
+```sh
 apt-cache policy bcmwl-kernel-source 
+```
+
 or:
+
+```sh
 apt-cache policy broadcom-sta-source 
-Please execute the following via a terminal and post the results in your report:
+```
+
+* Please execute the following via a terminal and post the results in your report:
+
+```sh
 lspci -vvnn | grep -A 9 Network
 lsb_release -rd
 uname -a
 sudo dmidecode -s bios-version
 sudo dmidecode -s bios-release-date 
-The full manufacturer and model of your computer as noted on the sticker of the computer itself.
-Did this problem not occur in a previous release? If so, which one(s) specifically?
-Does this problem occur with the latest version of Ubuntu?
-If available, please comment to how testing the relevant open source driver for your card type provides a WORKAROUND. If your chipset is supported as per above, but doesn't work, please file a bug following the b43 driver procedure below.
-Please provide the router manufacturer, model, and firmware version.
-Please comment to how testing ndiswrapper for your card type provides a WORKAROUND. If it doesn't work, please file a bug report as per the support article.
+```
+
+1. The full manufacturer and model of your computer as noted on the sticker of the computer itself.
+2. Did this problem not occur in a previous release? If so, which one(s) specifically?
+3. Does this problem occur with the latest version of Ubuntu?
+4. If available, please comment to how testing the relevant open source driver for your card type provides a WORKAROUND. If your chipset is supported as per above, but doesn't work, please file a bug following the b43 driver procedure below.
+5. Please provide the router manufacturer, model, and firmware version.
+6. Please comment to how testing ndiswrapper for your card type provides a WORKAROUND. If it doesn't work, please file a bug report as per the support article.
 
 If the version of the driver you are using in the repository is the latest version available as per Broadcom, it is also advised to send them an e-mail via their contact page, and post their response to your report.
 If the version of the driver you are using in the repository is an older version than that available from Broadcom, then contacting them would not apply. Instead, an investigation would need to occur to see if the version available for your release should be changed.
