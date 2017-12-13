@@ -104,17 +104,27 @@ sudo apt-get --reinstall install bcmwl-kernel-source
 ```
 
 
-Note: If you see the message "Module build for the currently running kernel was skipped since the kernel source for this kernel does not seem to be installed" then you are missing the appropriate generic linux-header package(s).
+**Note: **If you see the message "Module build for the currently running kernel was skipped since the kernel source for this kernel does not seem to be installed" then you are missing the appropriate generic linux-header package(s).
+
 To test the driver (and remove the need for a computer restart) use:
+
+
+```text
 sudo modprobe -r b43 ssb wl brcmfmac brcmsmac bcma
 sudo modprobe wl
+```
+
 Allow several seconds for the network manager to scan for available networks before attempting a connection. The bcmwl-kernel-source package should automatically blacklist the open source drivers so that the STA driver is the only one in use.
 Back to top
-STA - No Internet access
 
-If you do not have any other means of Internet access on your computer, you can install the bcmwl-kernel-source package from the restricted folder under ../pool/restricted/b/bcmwl on the Ubuntu install media.
-Note: The bcmwl-kernel-source package depends on the linux-headers packages so you may need to first retrieve the appropriate package(s) from the online repositories. A running LiveCD/LiveUSB environment has these packages (allowing the wireless to work), but an installed system may not. Make sure you have the linux-headers package that matches your current kernel version, plus the appropriate generic header packages so that they are automatically updated on a kernel upgrade. To find out your current kernel use the command:
-uname -r
+## STA - No Internet access
+
+If you do not have any other means of Internet access on your computer, you can install the bcmwl-kernel-source package from the restricted folder under **../pool/restricted/b/bcmwl** on the Ubuntu install media.
+
+**Note:** The bcmwl-kernel-source package depends on the linux-headers packages so you may need to first retrieve the appropriate package(s) from the online repositories. A running LiveCD/LiveUSB environment has these packages (allowing the wireless to work), but an installed system may not. Make sure you have the linux-headers package that matches your current kernel version, plus the appropriate generic header packages so that they are automatically updated on a kernel upgrade. To find out your current kernel use the command:
+
+`uname -r`
+
 To find what linux-headers packages you have installed use the command:
 dpkg --get-selections | grep headers
 Systems installed from CDROM can add the install CD as a package source and install bcmwl-kernel-source using apt-get as above. However, if you want to do it manually then the instructions are as follows:
