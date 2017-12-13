@@ -51,52 +51,59 @@ The propietary Broadcom STA Wireless driver is maintained upstream by Broadcom. 
 * The bcmwl-kernel-source package aims to offer a later version for a given release. Instructions for installation may be found later in this article.
 * The broadcom-sta package aims to offer an earlier version for a given release. For further installation instructions, please see here.
 
-b43 driver (Open-source)
+## b43 driver (Open-source)
 
 For Chip ID BCM 4306 (rev 03), 4309, 4311, 4312, 4318, 4322, 4331, 43224 and 43225. 
 
 The b43 infrastructure is composed of two parts. The first is the firmware-b43-installer package. This is simply a script to extract and install the b43 driver firmware, maintained by the Ubuntu community. The second is the b43 driver, maintained upstream by the Linux kernel community. Instructions to install the package may be found below.
 
-b43legacy driver (Open-source)
+## b43legacy driver (Open-source)
 
 For Chip ID BCM 4301, 4306 (rev 02), and 4309. 
 
 The b43legacy infrastructure is composed of two parts. The first is the firmware-b43legacy-installer package. This is simply a script to extract and install the b43legacy driver firmware, maintained by the Ubuntu community. The second is the b43 driver, maintained upstream by the Linux kernel community. Instructions to install the package may be found below.
 
-brcmsmac driver (Open-source)
+## brcmsmac driver (Open-source)
 
 For Chip ID BCM 4313, 43224 and 43225. 
 
 The open-source brcmsmac driver for PCIe devices is available from the brcm80211 module of the linux kernel package, maintained upstream by the linux kernel community. For more granular support information, please see their wiki page here.
 
-brcmfmac driver (Open-source)
+## brcmfmac driver (Open-source)
 
 SDIO: For Chip ID BCM 4329, 4330, 4334, 4335, 4354, 43143, 43241, and 43362. 
 USB: For Chip ID BCM 43143, 43242, 43566, and 43569. 
 
 The open-source brcmfmac driver is available from the brcm80211 module of the linux kernel package, maintained upstream by the linux kernel community. For more granular support information, please see their wiki page here.
 
-rndis_wlan driver (Open-source)
+## rndis_wlan driver (Open-source)
 
 For Chip ID BCM 4320. 
 
 The open-source rndis_wlan driver is available from the linux kernel package, maintained upstream by the linux kernel community. For more granular support information, please see their wiki page here.
 
-ndiswrapper (Open-source)
+## ndiswrapper (Open-source)
 
 For all chip IDs. 
 
 The ndiswrapper package utilizes the Windows closed source drivers to activate your WiFi card. It is maintained upstream here. For installation instructions, please see here.
 
-Installing STA drivers
-STA - Internet access
+# Installing STA drivers
+## STA - Internet access
 
 If you have some other kind of Internet access on your computer (e.g. via an ethernet cable) then use the instructions below.
 
-12.04 (Precise Pangolin)
+### 12.04 (Precise Pangolin)
+
 Open a Terminal and install the bcmwl-kernel-source package:
+
+
+```text
 sudo apt-get update
 sudo apt-get --reinstall install bcmwl-kernel-source
+```
+
+
 Note: If you see the message "Module build for the currently running kernel was skipped since the kernel source for this kernel does not seem to be installed" then you are missing the appropriate generic linux-header package(s).
 To test the driver (and remove the need for a computer restart) use:
 sudo modprobe -r b43 ssb wl brcmfmac brcmsmac bcma
