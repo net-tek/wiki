@@ -15,6 +15,8 @@ To identify a card that was installed inside your computer prior to purchase, pl
 
 This will display:
 
+
+```text
 03:00.0 Network controller [0280]: Broadcom Corporation BCM4331 802.11a/b/g/n [14e4:4331] (rev 02)
 Subsystem: Apple Inc. AirPort Extreme [106b:00d6]
 Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B- DisINTx-
@@ -23,6 +25,7 @@ Interrupt: pin A routed to IRQ 17
 Region 0: Memory at a0600000 (64-bit, non-prefetchable) [size=16K]
 Capabilities: 
 Kernel driver in use: wl 
+```
 
 You now know:
 
