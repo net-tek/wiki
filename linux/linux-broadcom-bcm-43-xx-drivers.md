@@ -16,7 +16,7 @@ To identify a card that was installed inside your computer prior to purchase, pl
 This will display:
 
 
-```text
+```sh
 03:00.0 Network controller [0280]: Broadcom Corporation BCM4331 802.11a/b/g/n [14e4:4331] (rev 02)
 Subsystem: Apple Inc. AirPort Extreme [106b:00d6]
 Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B- DisINTx-
@@ -98,7 +98,7 @@ If you have some other kind of Internet access on your computer (e.g. via an eth
 Open a Terminal and install the bcmwl-kernel-source package:
 
 
-```text
+```sh
 sudo apt-get update
 sudo apt-get --reinstall install bcmwl-kernel-source
 ```
@@ -109,7 +109,7 @@ sudo apt-get --reinstall install bcmwl-kernel-source
 To test the driver (and remove the need for a computer restart) use:
 
 
-```text
+```sh
 sudo modprobe -r b43 ssb wl brcmfmac brcmsmac bcma
 sudo modprobe wl
 ```
@@ -203,23 +203,46 @@ cd /cdrom/pool/main/b/b43-fwcutter/
 sudo dpkg -i b43-fwcutter* 
 ```
 
-On a computer with Internet access, download the required firmware file: 
-b43legacy - http://downloads.openwrt.org/sources/wl_apsta-3.130.20.0.o 
-b43 (12.04 Precise Pangolin) - http://mirror2.openwrt.org/sources/broadcom-wl-5.10.56.27.3_mipsel.tar.bz2 
-b43 (14.04 Trusty Tahr) - http://www.lwfinger.com/b43-firmware/broadcom-wl-5.100.138.tar.bz2 
-For the latest information on what files to download see http://wireless.kernel.org/en/users/Drivers/b43#Other_distributions_not_mentioned_above and http://wireless.kernel.org/en/users/Drivers/b43/developers .
-Copy the downloaded file to your home folder. Open a new Terminal and use b43-fwcutter to extract and install the firmware: 
-b43legacy
+* On a computer with Internet access, download the required firmware file: 
+
+**b43legacy** - http://downloads.openwrt.org/sources/wl_apsta-3.130.20.0.o 
+**b43 (12.04 Precise Pangolin)** - http://mirror2.openwrt.org/sources/broadcom-wl-5.10.56.27.3_mipsel.tar.bz2 
+**b43 (14.04 Trusty Tahr)** - http://www.lwfinger.com/b43-firmware/broadcom-wl-5.100.138.tar.bz2 
+
+For the latest information on what files to download see 
+http://wireless.kernel.org/en/users/Drivers/b43#Other_distributions_not_mentioned_above and 
+http://wireless.kernel.org/en/users/Drivers/b43/developers .
+
+* Copy the downloaded file to your home folder. Open a new Terminal and use b43-fwcutter to extract and install the firmware: 
+
+**b43legacy**
+
+
+```sh
 sudo b43-fwcutter -w /lib/firmware wl_apsta-3.130.20.0.o
-b43 (12.04 Precise Pangolin)
+```
+
+
+**b43 (12.04 Precise Pangolin)**
+
+
+```sh
 tar xfvj broadcom-wl-5.10.56.27.3_mipsel.tar.bz2
 sudo b43-fwcutter -w /lib/firmware broadcom-wl-5.10.56.27.3/driver/wl_apsta/wl_prebuilt.o
-b43 (14.04 Trusty Tahr)
+```
+
+
+**b43 (14.04 Trusty Tahr)**
+
+
+```sh
 tar xfvj broadcom-wl-5.100.138.tar.bz2
 sudo b43-fwcutter -w /lib/firmware broadcom-wl-5.100.138/linux/wl_apsta.o
-Restart the computer or reload the b43/b43legacy module as outlined in the Switching between drivers section below (replace b43 with b43legacy where appropriate).
+```
 
-Back to top
+
+* Restart the computer or reload the b43/b43legacy module as outlined in the Switching between drivers section below (replace b43 with b43legacy where appropriate).
+
 
 Switching between drivers
 If you card is supported by more than one driver then use the modprobe command to test the drivers. First unload all conflicting drivers (this includes removing the driver you're trying to install):
