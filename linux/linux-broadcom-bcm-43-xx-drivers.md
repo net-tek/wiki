@@ -335,24 +335,38 @@ sudo dmidecode -s bios-release-date
 6. Please comment to how testing ndiswrapper for your card type provides a WORKAROUND. If it doesn't work, please file a bug report as per the support article.
 
 If the version of the driver you are using in the repository is the latest version available as per Broadcom, it is also advised to send them an e-mail via their contact page, and post their response to your report.
+
 If the version of the driver you are using in the repository is an older version than that available from Broadcom, then contacting them would not apply. Instead, an investigation would need to occur to see if the version available for your release should be changed.
 
-b43/b43legacy firmware utility
+## b43/b43legacy firmware utility
 
 Before filing a bug report about b43 or b43legacy, it's important to distinguish this as a issue with the firmware extraction script, or the driver itself. If it's an issue with the script, one will need to install the version from the Ubuntu repositories (not a recompiled/custom version) and then execute via a terminal either:
+
+```sh
 ubuntu-bug firmware-b43-installer
+```
+
 or:
+
+```sh
 ubuntu-bug firmware-b43legacy-installer
-b43/b43legacy driver
+```
+
+## b43/b43legacy driver
 
 For bugs regarding the b43 or b43legacy driver, please execute the following via a terminal:
+
+```sh
 ubuntu-bug linux
+```
+
 Also, please provide the following:
-The full manufacturer and model of your computer as noted on the sticker of the computer itself.
-Did this problem not occur in a previous release? If so, which one(s) specifically?
-Does this problem occur with the latest version of Ubuntu?
-If available, please comment to how testing test the relevant Broadcom STA Wireless driver for your card type provides a WORKAROUND. If it doesn't, please file a report as per the procedure above.
-Please provide the router manufacturer, model, and firmware version.
-Please comment to how testing ndiswrapper for your card type provides a WORKAROUND. If it doesn't work, please file a bug report as per the support article.
+
+1. The full manufacturer and model of your computer as noted on the sticker of the computer itself.
+2. Did this problem not occur in a previous release? If so, which one(s) specifically?
+3. Does this problem occur with the latest version of Ubuntu?
+4. If available, please comment to how testing test the relevant Broadcom STA Wireless driver for your card type provides a WORKAROUND. If it doesn't, please file a report as per the procedure above.
+5. Please provide the router manufacturer, model, and firmware version.
+6. Please comment to how testing ndiswrapper for your card type provides a WORKAROUND. If it doesn't work, please file a bug report as per the support article.
 
 Once all of the required information is present, if the version of the driver you are using is the latest version available from the Ubuntu repositories, then one would want to e-mail the b43-dev mailing list following this procedure.
