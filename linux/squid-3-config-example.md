@@ -1,6 +1,6 @@
 <!-- TITLE: Squid 3 Config Example -->
 
-
+### /etc/squid/squid.conf
 ```text
 # /etc/squid/squid.conf
 #
@@ -95,7 +95,7 @@ refresh_pattern -i (/cgi-bin/|\?) 0	0%	0
 refresh_pattern .		0	20%	4320
 ```
 
-
+### /etc/squid/sites.whitelist.txt
 ```text
 # /etc/squid/sites.whitelist.txt
 ##### Microsoft #####
