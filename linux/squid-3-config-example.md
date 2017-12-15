@@ -2,6 +2,7 @@
 
 
 ```text
+# /etc/squid/squid.conf
 #
 # Recommended minimum configuration:
 #
@@ -93,3 +94,78 @@ refresh_pattern ^gopher:	1440	0%	1440
 refresh_pattern -i (/cgi-bin/|\?) 0	0%	0
 refresh_pattern .		0	20%	4320
 ```
+
+
+```text
+# /etc/squid/sites.whitelist.txt
+##### Microsoft #####
+go.microsoft.com
+.mp.microsoft.com
+.sls.microsoft.com
+api.login.microsoftonline.com
+clientconfig.microsoftonline-p.net
+device.login.microsoftonline.com
+hip.microsoftonline-p.net
+hipservice.microsoftonline.com
+login.microsoft.com
+login.microsoftonline.com
+logincert.microsoftonline.com
+loginex.microsoftonline.com
+login-us.microsoftonline.com
+login.microsoftonline-p.com
+nexus.microsoftonline-p.com
+stamp2.login.microsoftonline.com
+login.windows.net
+accesscontrol.windows.net
+secure.aadcdn.microsoftonline-p.com
+.office365.com
+home.office.com
+portal.office.com
+agent.office.net
+www.office.com
+signup.microsoft.com
+portal.microsoftonline.com
+.portal.cloudappsecurity.com
+prod.msocdn.com
+shellprod.msocdn.com
+appsforoffice.microsoft.com
+Contentstorage.osi.office.net
+clientlog.portal.office.com
+.officeapps.live.com
+nexusrules.officeapps.live.com
+suite.office.net
+account.office.net
+browser.pipe.aria.microsoft.com
+.omniroot.com
+.verisign.com
+.symcb.com
+.symcd.com
+.verisign.net
+.geotrust.com
+.entrust.net
+.public-trust.com
+.digicert.com
+.identrust.com
+.globalsign.com
+.letsencrypt.org
+.msocsp.com
+.public-trust.com
+.crl.microsoft.com
+ctldl.windowsupdate.com
+www.microsoft.com\/pki\/CRL\/products(\/.*)?$
+
+##### Adobe #####
+.adobe.activate.com
+.adobelogin.com
+.adobe.com
+
+##### Avid #####
+.avid.com
+.amazonaws.com
+.akamaitechnologies.com
+
+##### Marvelous Designer #####
+.sapi.clo3d.com
+.api.clo3d.com
+```
+
