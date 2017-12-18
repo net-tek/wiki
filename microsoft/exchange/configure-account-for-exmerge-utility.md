@@ -13,15 +13,15 @@ To use the ExMerge utility without being restricted by these inherited permissio
 
 ## To create a new security group and to add accounts to this group, follow these steps
 To create a new security group and to add accounts to this group, follow these steps:
-1.     Click Start, point to Programs, point to Microsoft Exchange, and then click Active Directory Users and Computers.
-2.     Expand your domain name.
-3.     Right-click the organizational unit or the container where you want to create the new security group, point to New, and then click Group.
-4.     In the Group name box, type a name for the group.
-5.     Under Group type, make sure that the Security option is selected.
-6.     Click Next two times, and then click Finish.
-7.     Right-click the group that you created, and then click Properties.
-8.     Click the Members tab, and then click Add.
-9.     In the Select Users, Contacts, or Computers dialog box, add the accounts or the groups that you want to use to run the ExMerge utility, and then click OK two times.
+1. Click Start, point to Programs, point to Microsoft Exchange, and then click Active Directory Users and Computers.
+2. Expand your domain name.
+3. Right-click the organizational unit or the container where you want to create the new security group, point to New, and then click Group.
+4. In the Group name box, type a name for the group.
+5. Under Group type, make sure that the Security option is selected.
+6. Click Next two times, and then click Finish.
+7. Right-click the group that you created, and then click Properties.
+8. Click the Members tab, and then click Add.
+9. In the Select Users, Contacts, or Computers dialog box, add the accounts or the groups that you want to use to run the ExMerge utility, and then click OK two times.
 
 Note If you are running Exchange on a Microsoft Windows Server 2003-based computer, the list of accounts and groups does not appear in the Select Users, Contacts, or Computers dialog box. To locate the user account or the security group, follow these steps:
 1.     In the Select Users, Contacts, or Computers dialog box, click Advanced, and then click Find Now.
