@@ -60,3 +60,17 @@ Now configure the URLs as shown below and click **save**.
 
 AutoDiscover feature in Exchange 2013 let’s client application such as Office Outlook 2007, 2010 and 2013 to connect to Exchange server automatically. AutoDiscover feature automatically discovers the mailbox settings for user profile in Office Outlook application. AutoDiscover also works for supported mobile applications. In Exchange 2013, you can configure SCP for **AutoDiscover** service via Exchange Management Shell. The command below will update SCP (Service Connection Point) object. SCP is active directory object and is used by internal domain-joined clients to retrieve autodiscover URL.
 
+
+```powershell
+[PS] c:\windows\system32>Set-ClientAccessServer -Identity MBG-MAIL -AutoDiscoverServiceInternalUri https://autodiscover.mustbegeek.com/Autodiscover/Autodiscover.xml
+```
+
+To view the changes type following command in Exchange Management Shell.
+
+```powershell
+[PS] c:\windows\system32>Get-ClientAccessServer | FL AutoDiscoverServiceInternalUri
+```
+
+You don’t have to manually set External URL for autodiscover. Clients from outside/Internet will connect to autodiscover.mustbegeek.com domain. So make sure autodiscover.company.com domain record in public hosted DNS server like GoDaddy is pointed to public IP of your organization. Also make sure, autodiscover.company.com is added as Subject Alternative Name in the digital **certificate installed in the Exchange server**.
+
+In this way you can configure internal and external URLs in Exchange 2013. Now you can configure HTTP to HTTPS redirection for accessing OWA by clients.
