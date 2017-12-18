@@ -23,9 +23,9 @@ To create a new security group and to add accounts to this group, follow these s
 8. Click the Members tab, and then click Add.
 9. In the Select Users, Contacts, or Computers dialog box, add the accounts or the groups that you want to use to run the ExMerge utility, and then click OK two times.
 
-Note If you are running Exchange on a Microsoft Windows Server 2003-based computer, the list of accounts and groups does not appear in the Select Users, Contacts, or Computers dialog box. To locate the user account or the security group, follow these steps:
-1.     In the Select Users, Contacts, or Computers dialog box, click Advanced, and then click Find Now.
-2.     Locate and then click the account or the security group in the Search results list, and then click OK.
+		Note If you are running Exchange on a Microsoft Windows Server 2003-based computer, the list of accounts and groups does not appear in the Select Users, Contacts, or Computers dialog box. To locate the user account or the security group, follow these steps:
+1. In the Select Users, Contacts, or Computers dialog box, click Advanced, and then click Find Now.
+2. Locate and then click the account or the security group in the Search results list, and then click OK.
 10.  Delegate the Exchange View Only Administrator role of the related administrative group to the security group that you created:
 1.     On the Exchange computer, click Start, point to Programs, point to Microsoft Exchange, and then click System Manager.
 2.     If administrative groups are enabled, expand Administrative Groups, and then expand your administrative group.
