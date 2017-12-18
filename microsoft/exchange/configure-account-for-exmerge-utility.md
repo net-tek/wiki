@@ -31,14 +31,16 @@ To create a new security group and to add accounts to this group, follow these s
     4. In Exchange Administration Delegation Wizard, click Next, and then click Add.
     5. Click the security group that you just created in the Group box, click Exchange View Only Administrator in the Role box, and then click OK.
     6. Click Next, and then click Finish.
+
 To grant mailbox permissions to the security group that you created, follow these steps:
-1.     On the Exchange computer, click Start, point to Programs, point to Microsoft Exchange, and then click System Manager.
-2.     If administrative groups are enabled, expand Administrative Groups, and then expand your administrative group.
-3.     Expand Servers, expand your Exchange computer, and then expand the storage group that contains the mailbox store that you want to use with the ExMerge utility. For example, expand First Storage Group.
-4.     Right-click the mailbox store that you want to use with the ExMerge utility, and then click Properties.
-5.     Click the Security tab.
-6.     Click Add.
-7.     In the Select Users, Contacts, or Computers dialog box, add the security group that you created earlier, and then click OK two times.
+
+1. On the Exchange computer, click Start, point to Programs, point to Microsoft Exchange, and then click System Manager.
+2. If administrative groups are enabled, expand Administrative Groups, and then expand your administrative group.
+3. Expand Servers, expand your Exchange computer, and then expand the storage group that contains the mailbox store that you want to use with the ExMerge utility. For example, expand First Storage Group.
+4. Right-click the mailbox store that you want to use with the ExMerge utility, and then click Properties.
+5. Click the Security tab.
+6. Click Add.
+7. In the Select Users, Contacts, or Computers dialog box, add the security group that you created earlier, and then click OK two times.
 
 When you add the security group, the Allow permission check box is automatically selected for all permissions on the mailbox store. This includes the Receive As and the Send As permissions that are required for the accounts that will use the ExMerge utility to access all mailboxes in the mailbox store.
 For more information about how Exchange 2000 and Exchange 2003 use permissions to control access to objects in the Exchange store, visit the following Microsoft Web site to download the "Working with Store Permissions in Microsoft Exchange 2000 and 2003" document:
