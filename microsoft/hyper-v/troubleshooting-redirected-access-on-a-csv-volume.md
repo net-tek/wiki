@@ -51,4 +51,36 @@ Let’s look at each one of the four reasons I mentioned and propose some troubl
 Figure 5
 Therefore, the first troubleshooting step should be to try turning off Redirected Access mode in the Failover Cluster Management interface.
 
-2. **There is a storage connectivity issue:**  When a node loses connectivity to attached storage that is supporting a CSV volume, the cluster implements a recovery mode by redirecting storage I\O to another node in the cluster over a network that CSV can use.  The status of the cluster Physical Disk resource associated with the CSV volume is **Redirected Access** and all storage I\O for the associated virtual machine(s) being hosted on that volume is redirected over the network to another node in the cluster that has direct access to the CSV volume.  This is by far the number one reason CSV volumes are placed in **Redirected Access** mode. Troubleshoot this as you would any other loss of storage connectivity on a server.  Involve the storage vendor as needed.  Since this is a cluster, the cluster validation process can also be used as part of the troubleshooting process to test storage connectivity.
+2. **There is a storage connectivity issue:**  When a node loses connectivity to attached storage that is supporting a CSV volume, the cluster implements a recovery mode by redirecting storage I\O to another node in the cluster over a network that CSV can use.  The status of the cluster Physical Disk resource associated with the CSV volume is **Redirected Access** and all storage I\O for the associated virtual machine(s) being hosted on that volume is redirected over the network to another node in the cluster that has direct access to the CSV volume.  This is by far the `number one reason` CSV volumes are placed in **Redirected Access** mode. Troubleshoot this as you would any other loss of storage connectivity on a server.  Involve the storage vendor as needed.  Since this is a cluster, the cluster validation process can also be used as part of the troubleshooting process to test storage connectivity.
+
+Look for the following event ID in the system event log.
+
+
+```powershell
+Log Name: System
+Source: Microsoft-Windows-FailoverClustering
+Date: 10/8/2010 6:16:39 PM
+Event ID: 5121
+Task Category: Cluster Shared Volume
+Level: Error
+Keywords:
+User: SYSTEM
+Computer: Node1.cluster.com
+
+Description:Cluster Shared Volume ‘DATA-LUN1’ (‘DATA-LUN1’) is no longer directly accessible from this cluster node. I/O access will be redirected to the storage device over the network through the node that owns the volume. This may result in degraded performance. If redirected access is turned on for this volume, please turn it off. If redirected access is turned off, please troubleshoot this node’s connectivity to the storage device and I/O will resume to a healthy state once connectivity to the storage device is reestablished.
+```
+
+3. **A backup of a CSV volume fails:**  When a backup is initiated on a CSV volume, the volume is placed in **Redirected Access** mode.  The type of backup being executed determines how long a CSV volume stays in redirected mode. If a software backup is being executed, the CSV volume remains in redirected mode until the backup completes.  If hardware snapshots are being used as part of the backup process, the amount of time a CSV volume stays in redirected mode will be very short.  For a backup scenario, the CSV volume status is slightly modified.  The status actually shows as **Backup in progress, Redirected Access**  (Figure 6) to allow you to better understand why the volume was placed in **Redirected Access** mode. When the backup application completes the backup of the volume, the cluster must be properly notified so the volume can be brought out of redirected mode.
+
+![7384 Clip Image 012 4 A 90 E 2 Bb](/uploads/exchange/7384-clip-image-012-4-a-90-e-2-bb.jpg "7384 Clip Image 012 4 A 90 E 2 Bb")
+Figure 6
+
+A couple of things can happen here.  Before proceeding down this road, ensure a backup is really not in progress. The first thing that needs to be considered is that the backup completes but the application did not properly notify the cluster that it completed so the volume can be brought out of redirected mode.  The proper call that needs to be made by the backup application is ClusterClearBackupStateForSharedVolume which is documented on MSDN.  If that is the case, you should be able to clear the **Backup in progress, Redirected Access** status by simulating a failure on the CSV volume using the cluster PowerShell cmdlet Test-ClusterResourceFailure.  Using the CSV volume shown in Figure 6, an example would be –
+
+`Test-ClusterResourceFailure “35 GB Disk”`
+
+If this clears the redirected status, then the backup application vendor needs to be notified so they can fix their application.
+
+The second consideration concerns a backup that fails, but the application did not properly notify the cluster of the failure so the cluster still thinks the backup is in progress. If a backup fails, and the failure occurs before a snapshot of the volume being backed up is created, then the status of the CSV volume should be reset by itself after a 30 minute time delay.  If, however, during the backup, a software snapshot was actually created (assuming the application creates software snapshots as part of the backup process), then we need to use a slightly different approach.
+
+To determine if any volume shadow copies exist on a CSV volume, use the vssadmin command line utility and run vssadmin list shadows (Figure 7).
