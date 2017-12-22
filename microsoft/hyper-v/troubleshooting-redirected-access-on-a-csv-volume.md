@@ -84,3 +84,43 @@ If this clears the redirected status, then the backup application vendor needs t
 The second consideration concerns a backup that fails, but the application did not properly notify the cluster of the failure so the cluster still thinks the backup is in progress. If a backup fails, and the failure occurs before a snapshot of the volume being backed up is created, then the status of the CSV volume should be reset by itself after a 30 minute time delay.  If, however, during the backup, a software snapshot was actually created (assuming the application creates software snapshots as part of the backup process), then we need to use a slightly different approach.
 
 To determine if any volume shadow copies exist on a CSV volume, use the vssadmin command line utility and run vssadmin list shadows (Figure 7).
+
+![0042 Clip Image 014 7 Ad 7 B 771](/uploads/exchange/0042-clip-image-014-7-ad-7-b-771.jpg "0042 Clip Image 014 7 Ad 7 B 771")
+Figure 7
+
+Figure 7 shows there is a shadow copy that exists on the CSV volume that is in **Redirected Access** mode. Use the vssadmin utility to delete the shadow copy (Figure 8).  Once that completes, the CSV volume should come **Online** normally.  If not, change the Coordinator node by moving the volume to another node in the cluster and verify the volume comes **Online**.
+
+![7120 Clip Image 016 37 B 65 C 5 F](/uploads/exchange/7120-clip-image-016-37-b-65-c-5-f.jpg "7120 Clip Image 016 37 B 65 C 5 F")
+Figure 8
+
+4. **An incompatible filter driver is installed in the cluster:**  The last item in the list has to do with filter drivers introduced by third party application(s) that may be running on a cluster node and are incompatible with CSV.  When these filter drivers are detected by the cluster, the CSV volume is placed in redirected mode to help prevent potential data corruption on a CSV volume.  When this occurs an Event ID 5125[EC4]  **Warning** message is registered in the System Event Log.  Here is a sample message –
+
+
+```text
+17416 06/23/2010 04:18:12 AM   Warning       <node_name>  5125    Microsoft-Windows-FailoverClusterin Cluster Shared Vol NT AUTHORITY\SYSTEM               Cluster Shared Volume ‘Volume2’ (‘Cluster Disk 6’) has identified one or more active filter drivers on this device stack that could interfere with CSV operations. I/O access will be redirected to the storage device over the network through another Cluster node. This may result in degraded performance. Please contact the filter driver vendor to verify interoperability with Cluster Shared Volumes.  Active filter drivers found: <filter_driver_1>,<filter_driver_2>,<filter_driver_3>
+```
+
+The cluster log will record warning messages similar to these –
+
+```text
+7c8:088.06/10[06:26:07.394](000000) WARN  [DCM] filter <filter_name> found at unsafe altitude <altitude_numeric> 
+7c8:088.06/10[06:26:07.394](000000) WARN  [DCM] filter <filter_name>  found at unsafe altitude <altitude_numeric> 
+7c8:088.06/10[06:26:07.394](000000) WARN  [DCM] filter <filter_name>   found at unsafe altitude <altitude_numeric>
+```
+
+Event ID 5125 is specific to a file system filter driver.  If, instead, an incompatible volume filter driver were detected, an Event ID 5126 would be registered.  For more information on the difference between file and volume filter drivers, consult MSDN.
+
+**Note:**  Specific filter driver names and altitudes have been intentionally left out.  The information can be decoded by downloading the ‘File System Minifilter Allocated Altitudes’ spreadsheet posted on the Windows Hardware Developer Central public website.
+
+Additionally, the fltmc.exe command line utility can be run to enumerate filter drivers.  An example is shown in Figure 9.
+
+![8054 Clip Image 018 73 A 8552 C](/uploads/exchange/8054-clip-image-018-73-a-8552-c.jpg "8054 Clip Image 018 73 A 8552 C")
+Figure 9
+
+Once the Third Party filter driver has been identified, the application should be removed and\or the vendor contacted to report the problem.  Problems involving Third Party filter drivers are rarely seen but still need to be considered.
+
+UPDATE 4/9: A Hotfix has been released to address an issue where filter drivers can cause the ‘redirected access’ issue:
+
+FIXED: Cluster Shared Volumes (CSV) in redirected access mode after installing McAfee VSE 8.7 Patch 5 or 8.8 Patch 1 http://blogs.technet.com/b/askcore/archive/2012/03/18/fixed-cluster-shared-volumes-csv-in-redirected-access-mode-after-installing-mcafee-vse-8-7-patch-5-or-8-8-patch-1.aspx
+
+Hopefully, I have provided information here that will get you started down the right path to resolving issues that involve CSV volumes running in a Redirected Access mode.
