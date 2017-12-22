@@ -17,10 +17,12 @@ Disks that will be used in the CSV namespace must be MBR or GPT with an NTFS par
 Let’s start off by looking at the CSV namespace in a Failover Cluster when all things appear to be ‘normal.’ In Figure 1, all CSV volumes show **Online** in the Failover Cluster Management interface.
 
 ![6886 Clip Image 002 69 F 3 D 528](/uploads/6886-clip-image-002-69-f-3-d-528.jpg "6886 Clip Image 002 69 F 3 D 528")
+Figure 1
 
 Looking at a CSV volume from the perspective of a highly available Virtual Machine group (Figure 2), the Virtual Machine is **Online** on one node of the cluster (R2-NODE1), while the CSV volume hosting the Virtual Machine files is **Online** on another node (R2-NODE2) thus demonstrating how CSV completely disassociates the Virtual Machine resources (Virtual Machine; Virtual Machine Configuration) from the storage hosting them.
 
 ![5633 Clip Image 004 342 E 6 A 01](/uploads/5633-clip-image-004-342-e-6-a-01.jpg "5633 Clip Image 004 342 E 6 A 01")
+Figure 2
 
 When all things are working normally (no backups in progress, etc…) in a Failover Cluster with respect to CSV, the vast majority of all storage I/O is Direct I/O meaning each node hosting a virtual machine(s) is writing directly (via Fibre Channel, iSCSI, or SAS connectivity) to the CSV volume supporting the files associated with the virtual machine(s).  A CSV volume showing a **Redirected Access** status indicates that all I/O to that volume, from the perspective of a particular node in the cluster, is being redirected over the CSV network to another node in the cluster which still has direct access to the storage supporting the CSV volume.  This is, for all intents and purposes, a ‘recovery’ mode.  This functionality prevents the loss of all connectivity to storage.  Instead, all storage related I/O is redirected over the CSV network.  This is very powerful technology as it prevents a total loss of connectivity thereby allowing virtual machine workloads to continue functioning.  This provides the cluster administrator an opportunity to evaluate the situation and live migrate workloads to other nodes in the cluster not experiencing connectivity issues. All this happens behind the scenes without users knowing what is going on.  The end result may be slower performance (depending on the speed of the network interconnect, for example, 10 GB vs. I GB) since we are no longer using direct, local, block level access to storage.  We are, instead, using remote file system access via the network using SMB.
 
@@ -34,15 +36,19 @@ There are basically four reasons a CSV volume may be in a **Redirected Access** 
 Lets’ take a look at a CSV volume in Redirected Access mode (Figure 3).
 
 ![7041 Clip Image 006 1 D 1 Fe 8 C 5](/uploads/7041-clip-image-006-1-d-1-fe-8-c-5.jpg "7041 Clip Image 006 1 D 1 Fe 8 C 5")
+Figure 3
 
-When a CSV volume is placed in **Redirected Access** mode, a Warning message (Event ID 5136) is registered in the System Event log.
+When a CSV volume is placed in **Redirected Access** mode, a Warning message (Event ID 5136) is registered in the System Event log. (Figure 4).
 
 ![4743 Clip Image 008 61 Ec 0 Cf 9](/uploads/4743-clip-image-008-61-ec-0-cf-9.jpg "4743 Clip Image 008 61 Ec 0 Cf 9")
+Figure 4
 
 Let’s look at each one of the four reasons I mentioned and propose some troubleshooting steps that can help resolve the issue.
 
-1. **User intentionally places a CSV volume in Redirected Access mode:**  Users are able to manually place a CSV volume in **Redirected Access** mode by simply selecting a CSV volume, **Right-Click** on the resource, select **More Actions** and then select **Turn on redirected access for this Cluster shared volume**.
+1. **User intentionally places a CSV volume in Redirected Access mode:**  Users are able to manually place a CSV volume in **Redirected Access** mode by simply selecting a CSV volume, **Right-Click** on the resource, select **More Actions** and then select **Turn on redirected access for this Cluster shared volume**. (Figure 5).
 
 ![0028 Clip Image 010 4 D 1 A 1479](/uploads/exchange/0028-clip-image-010-4-d-1-a-1479.jpg "0028 Clip Image 010 4 D 1 A 1479")
 Figure 5
 Therefore, the first troubleshooting step should be to try turning off Redirected Access mode in the Failover Cluster Management interface.
+
+2. **There is a storage connectivity issue:**  When a node loses connectivity to attached storage that is supporting a CSV volume, the cluster implements a recovery mode by redirecting storage I\O to another node in the cluster over a network that CSV can use.  The status of the cluster Physical Disk resource associated with the CSV volume is **Redirected Access** and all storage I\O for the associated virtual machine(s) being hosted on that volume is redirected over the network to another node in the cluster that has direct access to the CSV volume.  This is by far the number one reason CSV volumes are placed in **Redirected Access** mode. Troubleshoot this as you would any other loss of storage connectivity on a server.  Involve the storage vendor as needed.  Since this is a cluster, the cluster validation process can also be used as part of the troubleshooting process to test storage connectivity.
