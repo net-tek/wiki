@@ -45,7 +45,7 @@ New-SendConnector -Name "Internet" -Usage Internet -AddressSpaces "*" -SourceTra
 For detailed syntax and parameter information, see New-SendConnector.
  
 **Step 2:** Modify the default Receive connector to allow anonymous connections 
-You need to be assigned permissions before you can perform this procedure. To see what permissions you need, see the "Receive connectors" entry in the Transport Permissions topic.
+You need to be assigned permissions before you can perform this procedure. To see what permissions you need, see the `Receive connectors` entry in the Transport Permissions topic.
  
 **Use the EMC to configure the Receive connector **
 
