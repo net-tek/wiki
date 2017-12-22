@@ -43,3 +43,6 @@ Let’s look at each one of the four reasons I mentioned and propose some troubl
 
 1. **User intentionally places a CSV volume in Redirected Access mode:**  Users are able to manually place a CSV volume in **Redirected Access** mode by simply selecting a CSV volume, **Right-Click** on the resource, select **More Actions** and then select **Turn on redirected access for this Cluster shared volume**.
 
+![0028 Clip Image 010 4 D 1 A 1479](/uploads/exchange/0028-clip-image-010-4-d-1-a-1479.jpg "0028 Clip Image 010 4 D 1 A 1479")
+Figure 5
+Therefore, the first troubleshooting step should be to try turning off Redirected Access mode in the Failover Cluster Management interface.
