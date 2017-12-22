@@ -32,3 +32,10 @@ There are basically four reasons a CSV volume may be in a **Redirected Access** 
 * An incompatible filter driver is installed on the node.
 
 Lets’ take a look at a CSV volume in Redirected Access mode (Figure 3).
+
+![7041 Clip Image 006 1 D 1 Fe 8 C 5](/uploads/7041-clip-image-006-1-d-1-fe-8-c-5.jpg "7041 Clip Image 006 1 D 1 Fe 8 C 5")
+
+When a CSV volume is placed in **Redirected Access** mode, a Warning message (Event ID 5136) is registered in the System Event log.
+
+![4743 Clip Image 008 61 Ec 0 Cf 9](/uploads/4743-clip-image-008-61-ec-0-cf-9.jpg "4743 Clip Image 008 61 Ec 0 Cf 9")
+
