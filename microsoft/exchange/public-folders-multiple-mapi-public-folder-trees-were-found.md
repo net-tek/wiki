@@ -17,11 +17,19 @@ Important:
 On the Attribute Editor tab, click msExchPFTreeType, and then click Edit. 
 Change the Value Back to 1.
 
-------------------------------------
+
+
+-----
+
+
 I know that you have reverted this change following the technet article.
 But the article says that if you have multiple CN=<PublicFoldersTree> under the Folder Hierarchies.
 I am sure that you have only one Public Folder Tree under the Folder Hieararchies.
------------------------------------
+
+
+-----
+
+
 
 Now do the following.
 In ADSIEDIT navigate to
