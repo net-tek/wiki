@@ -23,7 +23,7 @@ You need to be assigned permissions before you can perform this procedure. To se
 
 1. Expand Organization Configuration, click Hub Transport, and then in the action pane, click New Send connector.
 2. On the New Send Connector wizard Introduction page, in the Name field, type a unique name for the connector. From the Select the intended use for this Send connector drop-down list, select Internet, and then click Next.
-3. On the Address space page, click Add. In the SMTP Address Space dialog box, type "*" in the Address field, and then click OK. Click Next.
+> 3. On the Address space page, click Add. In the SMTP Address Space dialog box, type * in the Address field, and then click OK. Click Next.
 4. On the Network settings page, select Use Domain Name System (DNS) to route mail automatically. Select the Use External DNS Lookup settings check box. Click Next. 
 
 Note: 
