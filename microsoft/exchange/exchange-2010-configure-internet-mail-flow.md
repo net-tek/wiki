@@ -47,10 +47,10 @@ For detailed syntax and parameter information, see New-SendConnector.
 **Step 2:** Modify the default Receive connector to allow anonymous connections 
 You need to be assigned permissions before you can perform this procedure. To see what permissions you need, see the `Receive connectors` entry in the Transport Permissions topic.
  
-**Use the EMC to configure the Receive connector **
+ **Use the EMC to configure the Receive connector **
 
-1. Expand Server Configuration, click Hub Transport, and in the work pane under the Receive Connectors tab, select the Default <Server Name> connector. In the action pane, click Properties.
-2. In <Connector> Properties, select the Permissions tab.
+1. Expand Server Configuration, click Hub Transport, and in the work pane under the Receive Connectors tab, select the Default `Server Name` connector. In the action pane, click Properties.
+2. In `Connector` Properties, select the Permissions tab.
 3. Select Anonymous Users to add anonymous permissions. Click OK.
 
 **Use the Shell to configure the Receive connector **
