@@ -39,3 +39,7 @@ When a CSV volume is placed in **Redirected Access** mode, a Warning message (Ev
 
 ![4743 Clip Image 008 61 Ec 0 Cf 9](/uploads/4743-clip-image-008-61-ec-0-cf-9.jpg "4743 Clip Image 008 61 Ec 0 Cf 9")
 
+Let’s look at each one of the four reasons I mentioned and propose some troubleshooting steps that can help resolve the issue.
+
+1. **User intentionally places a CSV volume in Redirected Access mode:**  Users are able to manually place a CSV volume in **Redirected Access** mode by simply selecting a CSV volume, **Right-Click** on the resource, select **More Actions** and then select **Turn on redirected access for this Cluster shared volume**.
+
