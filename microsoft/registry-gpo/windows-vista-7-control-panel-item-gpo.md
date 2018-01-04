@@ -22,16 +22,16 @@ The following canonical names are defined for Control Panel items in Windows 7. 
 | Desktop Gadgets	| Microsoft.DesktopGadgets (Windows 7 and later only)	| {37efd44d-ef8d-41b1-940d-96973a50e9e0}
 | Device Manager	| Microsoft.DeviceManager	| {74246bfc-4c96-11d0-abef-0020af6b0b7a}
 | Devices and Printers	| Microsoft.DevicesAndPrinters (Windows 7 and later only)	| {A8A91A66-3A7D-4424-8D24-04E180695C7A}
-| Display	Microsoft.Display (Windows 7 and later only)	| {C555438B-3C23-4769-A71F-B6D3D9B6053A}
-| Ease of Access Center	Microsoft.EaseOfAccessCenter	| {D555645E-D4F8-4c29-A827-D93C859C4F2A}
-| Folder Options	Microsoft.FolderOptions	| {6DFD7C5C-2451-11d3-A299-00C04F8EF6AF}
-| Fonts	Microsoft.Fonts	| {93412589-74D4-4E4E-AD0E-E0CB621440FD}
-| Game Controllers	Microsoft.GameControllers	| {259EF4B1-E6C9-4176-B574-481532C9BCE8}
-| Get Programs	Microsoft.GetPrograms	| {15eae92e-f17a-4431-9f28-805e482dafd4}
-| Getting Started	Microsoft.GettingStarted (Windows 7 and later only)	| {CB1B7F8C-C50A-4176-B604-9E24DEE8D4D1}
-| HomeGroup	Microsoft.HomeGroup (Windows 7 and later only)	| {67CA7650-96E6-4FDD-BB43-A8E774F73A57}
-| Indexing Options	Microsoft.IndexingOptions	| {87D66A43-7B11-4A28-9811-C86EE395ACF7}
-| Infrared	Microsoft.Infrared (Windows 7 and later only)	| {A0275511-0E86-4ECA-97C2-ECD8F1221D08}
+| Display	| Microsoft.Display (Windows 7 and later only)	| {C555438B-3C23-4769-A71F-B6D3D9B6053A}
+| Ease of Access Center	| Microsoft.EaseOfAccessCenter	| {D555645E-D4F8-4c29-A827-D93C859C4F2A}
+| Folder Options	| Microsoft.FolderOptions	| {6DFD7C5C-2451-11d3-A299-00C04F8EF6AF}
+| Fonts	| Microsoft.Fonts	| {93412589-74D4-4E4E-AD0E-E0CB621440FD}
+| Game Controllers	| Microsoft.GameControllers	| {259EF4B1-E6C9-4176-B574-481532C9BCE8}
+| Get Programs	| Microsoft.GetPrograms	| {15eae92e-f17a-4431-9f28-805e482dafd4}
+| Getting Started	| Microsoft.GettingStarted (Windows 7 and later only)	| {CB1B7F8C-C50A-4176-B604-9E24DEE8D4D1}
+| HomeGroup	| Microsoft.HomeGroup (Windows 7 and later only)	| {67CA7650-96E6-4FDD-BB43-A8E774F73A57}
+| Indexing Options	| Microsoft.IndexingOptions	| {87D66A43-7B11-4A28-9811-C86EE395ACF7}
+| Infrared	| Microsoft.Infrared (Windows 7 and later only)	| {A0275511-0E86-4ECA-97C2-ECD8F1221D08}
 | Internet Options	Microsoft.InternetOptions	| {A3DD4F92-658A-410F-84FD-6FBBBEF2FFFE}
 | iSCSI Initiator	Microsoft.iSCSIInitiator	| {A304259D-52B8-4526-8B1A-A1D6CECC8243}
 | Keyboard	Microsoft.Keyboard	| {725BE8F7-668E-4C7B-8F90-46BDB0936430}
