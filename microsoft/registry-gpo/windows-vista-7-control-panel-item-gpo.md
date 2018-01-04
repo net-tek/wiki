@@ -8,7 +8,7 @@ The following canonical names are defined for Control Panel items in Windows 7. 
 
 | Control Panel Item	| Canonical name	| GUID |
 | --- | --- | --- |
-| Action Center	| Microsoft.ActionCenter (Windows 7 and later only)	| `{BB64F8A7-BEE7-4E1A-AB8D-7D8273F7FDB6}` |
+| Action Center	| Microsoft.ActionCenter (Windows 7 and later only)	| `{BB64F8A7-BEE7-4E1A-AB8D-7D8273F7FDB6}`
 | Administrative Tools	| Microsoft.AdministrativeTools	| {D20EA4E1-3957-11d2-A40B-0C5020524153} |
 | AutoPlay	| Microsoft.AutoPlay	| {9C60DE1E-E5FC-40f4-A487-460851A8D915} |
 | Backup and Restore	| Microsoft.BackupAndRestore (Windows 7 and later only)	| {B98A2BEA-7D42-4558-8BD1-832F41BAC6FD} |
