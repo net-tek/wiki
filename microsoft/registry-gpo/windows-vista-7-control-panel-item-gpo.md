@@ -8,19 +8,19 @@ The following canonical names are defined for Control Panel items in Windows 7. 
 
 | Control Panel Item	| Canonical name	| GUID |
 | --- | --- | --- |
-| Action Center	Microsoft.ActionCenter (Windows 7 and later only)	{BB64F8A7-BEE7-4E1A-AB8D-7D8273F7FDB6}
-| Administrative Tools	Microsoft.AdministrativeTools	{D20EA4E1-3957-11d2-A40B-0C5020524153}
-| AutoPlay	Microsoft.AutoPlay	{9C60DE1E-E5FC-40f4-A487-460851A8D915}
-| Backup and Restore	Microsoft.BackupAndRestore (Windows 7 and later only)	{B98A2BEA-7D42-4558-8BD1-832F41BAC6FD}
-| Biometric Devices	Microsoft.BiometricDevices (Windows 7 and later only)	{0142e4d0-fb7a-11dc-ba4a-000ffe7ab428}
-| BitLocker Drive Encryption	Microsoft.BitLockerDriveEncryption	{D9EF8727-CAC2-4e60-809E-86F80A666C91}
-| Color Management	Microsoft.ColorManagement	{B2C761C6-29BC-4f19-9251-E6195265BAF1}
-| Credential Manager	Microsoft.CredentialManager (Windows 7 and later only)	{1206F5F1-0569-412C-8FEC-3204630DFB70}
-| Date and Time	Microsoft.DateAndTime	{E2E7934B-DCE5-43C4-9576-7FE4F75E7480}
-| Default Location	Microsoft.DefaultLocation (Windows 7 and later only)	{00C6D95F-329C-409a-81D7-C46C66EA7F33}
-| Default Programs	Microsoft.DefaultPrograms	{17cd9488-1228-4b2f-88ce-4298e93e0966}
-| Desktop Gadgets	Microsoft.DesktopGadgets (Windows 7 and later only)	{37efd44d-ef8d-41b1-940d-96973a50e9e0}
-| Device Manager	Microsoft.DeviceManager	{74246bfc-4c96-11d0-abef-0020af6b0b7a}
+| Action Center	| Microsoft.ActionCenter (Windows 7 and later only)	| {BB64F8A7-BEE7-4E1A-AB8D-7D8273F7FDB6} |
+| Administrative Tools	| Microsoft.AdministrativeTools	| {D20EA4E1-3957-11d2-A40B-0C5020524153} |
+| AutoPlay	| Microsoft.AutoPlay	| {9C60DE1E-E5FC-40f4-A487-460851A8D915} |
+| Backup and Restore	| Microsoft.BackupAndRestore (Windows 7 and later only)	| {B98A2BEA-7D42-4558-8BD1-832F41BAC6FD} |
+| Biometric Devices	| Microsoft.BiometricDevices (Windows 7 and later only)	| {0142e4d0-fb7a-11dc-ba4a-000ffe7ab428} |
+| BitLocker Drive Encryption	| Microsoft.BitLockerDriveEncryption	| {D9EF8727-CAC2-4e60-809E-86F80A666C91} |
+| Color Management	| Microsoft.ColorManagement	| {B2C761C6-29BC-4f19-9251-E6195265BAF1} |
+| Credential Manager	| Microsoft.CredentialManager (Windows 7 and later only)	| {1206F5F1-0569-412C-8FEC-3204630DFB70}
+| Date and Time	| Microsoft.DateAndTime	| {E2E7934B-DCE5-43C4-9576-7FE4F75E7480}
+| Default Location	| Microsoft.DefaultLocation (Windows 7 and later only)	| {00C6D95F-329C-409a-81D7-C46C66EA7F33}
+| Default Programs	| Microsoft.DefaultPrograms	| {17cd9488-1228-4b2f-88ce-4298e93e0966}
+| Desktop Gadgets	| Microsoft.DesktopGadgets (Windows 7 and later only)	| {37efd44d-ef8d-41b1-940d-96973a50e9e0}
+| Device Manager	| Microsoft.DeviceManager	| {74246bfc-4c96-11d0-abef-0020af6b0b7a}
 | Devices and Printers	Microsoft.DevicesAndPrinters (Windows 7 and later only)	{A8A91A66-3A7D-4424-8D24-04E180695C7A}
 | Display	Microsoft.Display (Windows 7 and later only)	{C555438B-3C23-4769-A71F-B6D3D9B6053A}
 | Ease of Access Center	Microsoft.EaseOfAccessCenter	{D555645E-D4F8-4c29-A827-D93C859C4F2A}
