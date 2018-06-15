@@ -1,5 +1,5 @@
 <!-- TITLE: Live Resize Lvm Partition -->
-<!-- SUBTITLE: A quick summary of Live Resize Lvm Partition -->
+<!-- SUBTITLE: Live resize an active Lvm Partition -->
 
 Reference : https://access.redhat.com/solutions/199573
 
