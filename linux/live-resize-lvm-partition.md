@@ -128,6 +128,8 @@ Error: Partition(s) 2 on /dev/vda have been written, but we have been unable to 
 # pvs
   PV         VG          Fmt  Attr PSize  PFree
   /dev/vda2  rhel_vm-205 lvm2 a--  18.00g 6.20g
+	
+# lvresize /dev/mapper/vg_os-lv_root -l +100%FREE
 ```
 
 
